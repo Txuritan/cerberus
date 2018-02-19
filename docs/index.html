@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<title>Cerberus</title>
+<link href='cerberus.css' rel='stylesheet' type='type/css'>
+</head>
+<body>
+<x-nav primary>
+<x-nav-section grow>
+<x-nav-item brand>
+<a href='./'>Cerberus</a>
+</x-nav-item>
+</x-nav-section>
+</x-nav>
+<script>
+  var time = new Date().getHours();
+  if ((time >= 20 && time <= 23) || (time >= 0 && time <= 4)) {
+    document.body.setAttribute("dark", "");
+  } else {
+    document.body.setAttribute("light", "");
+  }
+</script>
+</body>
+</html>
