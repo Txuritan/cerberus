@@ -4,7 +4,9 @@
     %meta{"http-equiv" => "Content-Type", :content => "text/html; charset=utf-8"}
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     %title Cerberus
-    %link{:href => "cerberus.css", :rel => "stylesheet", :type => "type/css"}
+    -# %link{:href => "cerberus.css", :rel => "stylesheet", :type => "type/css", :media => "all"}
+    :css
+      @import url("./cerberus.css");
   %body
     %x-nav{:primary => true}
       %x-nav-section{:grow => true}
