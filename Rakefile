@@ -8,10 +8,10 @@ task :watch do |t, args|
 end
 
 task :compile do |t, args|
-	puts "Building #{file}.css..."
+	puts "Building cerberus.css..."
 	system "sass #{src}#{file}.scss:#{dist}cerberus.css"
 
-	puts "Building #{file}.min.css..."
+	puts "Building cerberus.min.css..."
 	system "sass #{src}#{file}.scss:#{dist}cerberus.min.css --style compressed"
 
 	puts "Building index.html..."

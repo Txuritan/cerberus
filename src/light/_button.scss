@@ -1,0 +1,24 @@
+body[light] {
+  x-button,
+  a[button],
+  button {
+    background-color: transparent;
+    border: 1px solid $color__light--foreground;
+    color: $color__light--foreground;
+    &:hover,
+    &:active {
+      background-color: $color__light--foreground;
+      color: $color__light--background;
+    }
+    &[error] {
+      background-color: $color__light--red;
+      border: 1px solid $color__light--red;
+      color: $color__light--background;
+    }
+    &[success] {
+      background-color: $color__light--green;
+      border: 1px solid $color__light--green;
+      color: $color__light--background;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+x-button,
+a[button],
+button {
+  border: none;
+  box-sizing: border-box;
+  display: inline-block;
+  margin: $padding--small 0;
+  outline: none;
+  padding: $padding--small;
+}
+
+x-group {
+  display: flex;
+  x-button,
+  a[button],
+  button {
+    flex: 0 1 auto;
+  }
+  &[full] {
+    justify-content: space-between;
+  }
+}

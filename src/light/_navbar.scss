@@ -4,7 +4,7 @@ body[light] {
       background-color: $color__light--black;
       x-nav-item {
         background-color: $color__light--black;
-        &:hover {
+        &[active], &:hover {
           background-color: darken($color__light--black, 10%);
         }
         > * {
@@ -16,7 +16,7 @@ body[light] {
       background-color: $color__light--red;
       x-nav-item {
         background-color: $color__light--red;
-        &:hover {
+        &[active], &:hover {
           background-color: darken($color__light--red, 10%);
         }
         > * {

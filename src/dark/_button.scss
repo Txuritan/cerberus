@@ -1,0 +1,25 @@
+body[dark] {
+  x-button,
+  a[button],
+  button {
+    background-color: transparent;
+    border: 1px solid $color__dark--foreground;
+    box-sizing: border-box;
+    color: $color__dark--foreground;
+    &:hover,
+    &:active {
+      background-color: $color__dark--foreground;
+      color: $color__dark--background;
+    }
+    &[error] {
+      background-color: $color__dark--red;
+      border: 1px solid $color__dark--red;
+      color: $color__dark--background;
+    }
+    &[success] {
+      background-color: $color__dark--green;
+      border: 1px solid $color__dark--green;
+      color: $color__dark--background;
+    }
+  }
+}

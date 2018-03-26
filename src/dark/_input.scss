@@ -1,0 +1,22 @@
+body[dark] {
+  input,
+  textarea,
+  select {
+    background-color: $color__dark--background;
+    border-color: $color__dark--foreground;
+    color: $color__dark--foreground;
+    &:hover {
+      border-color: $color__dark--cyan;
+    }
+    &:focus {
+      background-color: $color__dark--background;
+      border-color: $color__dark--blue;
+    }
+    &[error] {
+      border-color: $color__dark--red;
+    }
+    &[success] {
+      border-color: $color__dark--green;
+    }
+  }
+}

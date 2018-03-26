@@ -9,7 +9,7 @@ x-nav {
     &[grow] {
       flex: 1 1 auto;
     }
-    > * {
+    >* {
       display: block;
       line-height: $height--small;
       padding: 0 $padding--normal;
@@ -28,5 +28,8 @@ x-nav {
     &[overflow] {
       overflow-y: auto;
     }
+  }
+  &[overflow] {
+    overflow-y: auto;
   }
 }
