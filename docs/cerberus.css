@@ -169,11 +169,17 @@ table {
   border-spacing: 0; }
 
 body {
+  display: flex;
+  flex-direction: column;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica, Arial, sans-serif;
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  height: 100%;
+  min-height: 100%; }
 
 html {
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+  height: 100%;
+  min-height: 100%; }
 
 * {
   text-decoration: none; }
@@ -181,35 +187,128 @@ html {
 h1, h2, h3, h4 {
   margin: 0; }
 
+*[main] {
+  flex: 1 auto; }
+
+x-button,
+a[button],
+button {
+  border: none;
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 0.2rem 0;
+  outline: none;
+  padding: 0.2rem; }
+
+x-group {
+  display: flex; }
+  x-group x-button,
+  x-group a[button],
+  x-group button {
+    flex: 0 1 auto; }
+  x-group[full] {
+    justify-content: space-between; }
+
 x-grid {
   display: flex; }
-  x-grid x-column, x-grid x-column[size="1"] {
-    flex: 1; }
+  x-grid[flex] {
+    flex: 1 auto; }
+  x-grid x-column {
+    box-sizing: border-box;
+    flex: 1;
+    margin: 0.2rem; }
+    x-grid x-column[no-margin] {
+      margin: 0; }
+    x-grid x-column[flex] {
+      display: flex; }
+    x-grid x-column[nowrap] {
+      flex-wrap: nowrap; }
+  x-grid x-column[size="1"] {
+    box-sizing: border-box;
+    flex: 1;
+    margin: 0.2rem; }
+    x-grid x-column[size="1"][no-margin] {
+      margin: 0; }
   x-grid x-column[size="2"] {
-    flex: 2; }
+    box-sizing: border-box;
+    flex: 2;
+    margin: 0.2rem; }
+    x-grid x-column[size="2"][no-margin] {
+      margin: 0; }
   x-grid x-column[size="3"] {
-    flex: 3; }
+    box-sizing: border-box;
+    flex: 3;
+    margin: 0.2rem; }
+    x-grid x-column[size="3"][no-margin] {
+      margin: 0; }
   x-grid x-column[size="4"] {
-    flex: 4; }
+    box-sizing: border-box;
+    flex: 4;
+    margin: 0.2rem; }
+    x-grid x-column[size="4"][no-margin] {
+      margin: 0; }
   x-grid x-column[size="5"] {
-    flex: 5; }
+    box-sizing: border-box;
+    flex: 5;
+    margin: 0.2rem; }
+    x-grid x-column[size="5"][no-margin] {
+      margin: 0; }
   x-grid x-column[size="6"] {
-    flex: 6; }
+    box-sizing: border-box;
+    flex: 6;
+    margin: 0.2rem; }
+    x-grid x-column[size="6"][no-margin] {
+      margin: 0; }
   x-grid x-column[size="7"] {
-    flex: 7; }
+    box-sizing: border-box;
+    flex: 7;
+    margin: 0.2rem; }
+    x-grid x-column[size="7"][no-margin] {
+      margin: 0; }
   x-grid x-column[size="8"] {
-    flex: 8; }
+    box-sizing: border-box;
+    flex: 8;
+    margin: 0.2rem; }
+    x-grid x-column[size="8"][no-margin] {
+      margin: 0; }
   x-grid x-column[size="9"] {
-    flex: 9; }
+    box-sizing: border-box;
+    flex: 9;
+    margin: 0.2rem; }
+    x-grid x-column[size="9"][no-margin] {
+      margin: 0; }
   x-grid x-column[size="10"] {
-    flex: 10; }
+    box-sizing: border-box;
+    flex: 10;
+    margin: 0.2rem; }
+    x-grid x-column[size="10"][no-margin] {
+      margin: 0; }
   x-grid x-column[size="11"] {
-    flex: 11; }
+    box-sizing: border-box;
+    flex: 11;
+    margin: 0.2rem; }
+    x-grid x-column[size="11"][no-margin] {
+      margin: 0; }
   x-grid x-column[size="12"] {
-    flex: 12; }
+    box-sizing: border-box;
+    flex: 12;
+    margin: 0.2rem; }
+    x-grid x-column[size="12"][no-margin] {
+      margin: 0; }
   @media (max-width: 760px) {
     x-grid {
       display: block; } }
+
+input,
+textarea,
+select {
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  display: block;
+  margin: 0.2rem 0;
+  outline: none;
+  padding: 0.2rem;
+  width: 100%; }
 
 x-nav {
   display: flex;
@@ -235,11 +334,13 @@ x-nav {
       flex: 1 1 auto; }
     x-nav x-nav-section[overflow] {
       overflow-y: auto; }
+  x-nav[overflow] {
+    overflow-y: auto; }
 
 x-panel {
   display: flex;
   flex-direction: column;
-  margin-bottom: 0.2rem;
+  margin: 0.2rem;
   padding: 0.2rem; }
   x-panel x-panel-head {
     padding: 0.2rem; }
@@ -266,11 +367,62 @@ body[dark] {
   body[dark] a {
     color: #61afef; }
 
+body[dark] x-button,
+body[dark] a[button],
+body[dark] button {
+  background-color: transparent;
+  border: 1px solid #dcdfe4;
+  box-sizing: border-box;
+  color: #dcdfe4; }
+  body[dark] x-button:hover, body[dark] x-button:active,
+  body[dark] a[button]:hover,
+  body[dark] a[button]:active,
+  body[dark] button:hover,
+  body[dark] button:active {
+    background-color: #dcdfe4;
+    color: #282c34; }
+  body[dark] x-button[error],
+  body[dark] a[button][error],
+  body[dark] button[error] {
+    background-color: #e06c75;
+    border: 1px solid #e06c75;
+    color: #282c34; }
+  body[dark] x-button[success],
+  body[dark] a[button][success],
+  body[dark] button[success] {
+    background-color: #98c379;
+    border: 1px solid #98c379;
+    color: #282c34; }
+
+body[dark] input,
+body[dark] textarea,
+body[dark] select {
+  background-color: #282c34;
+  border-color: #dcdfe4;
+  color: #dcdfe4; }
+  body[dark] input:hover,
+  body[dark] textarea:hover,
+  body[dark] select:hover {
+    border-color: #56b6c2; }
+  body[dark] input:focus,
+  body[dark] textarea:focus,
+  body[dark] select:focus {
+    background-color: #282c34;
+    border-color: #61afef; }
+  body[dark] input[error],
+  body[dark] textarea[error],
+  body[dark] select[error] {
+    border-color: #e06c75; }
+  body[dark] input[success],
+  body[dark] textarea[success],
+  body[dark] select[success] {
+    border-color: #98c379; }
+
 body[dark] x-nav, body[dark] x-nav[primary] {
   background-color: #dcdfe4; }
   body[dark] x-nav x-nav-item, body[dark] x-nav[primary] x-nav-item {
     background-color: #dcdfe4; }
-    body[dark] x-nav x-nav-item:hover, body[dark] x-nav[primary] x-nav-item:hover {
+    body[dark] x-nav x-nav-item[active], body[dark] x-nav x-nav-item:hover, body[dark] x-nav[primary] x-nav-item[active], body[dark] x-nav[primary] x-nav-item:hover {
       background-color: #bfc5ce; }
     body[dark] x-nav x-nav-item > *, body[dark] x-nav[primary] x-nav-item > * {
       color: #282c34; }
@@ -278,7 +430,7 @@ body[dark] x-nav[secondary] {
   background-color: #e06c75; }
   body[dark] x-nav[secondary] x-nav-item {
     background-color: #e06c75; }
-    body[dark] x-nav[secondary] x-nav-item:hover {
+    body[dark] x-nav[secondary] x-nav-item[active], body[dark] x-nav[secondary] x-nav-item:hover {
       background-color: #d7424d; }
     body[dark] x-nav[secondary] x-nav-item > * {
       color: #282c34; }
@@ -286,17 +438,17 @@ body[dark] x-nav[secondary] {
 body[dark] x-panel[outline] {
   border: 1px solid #dcdfe4; }
 
-x-tag x-side[red] {
+body[dark] x-tag x-side[red] {
   background-color: #e06c75; }
-x-tag x-side[green] {
+body[dark] x-tag x-side[green] {
   background-color: #98c379; }
-x-tag x-side[yellow] {
+body[dark] x-tag x-side[yellow] {
   background-color: #e5c07b; }
-x-tag x-side[blue] {
+body[dark] x-tag x-side[blue] {
   background-color: #61afef; }
-x-tag x-side[magenta] {
+body[dark] x-tag x-side[magenta] {
   background-color: #c678dd; }
-x-tag x-side[cyan] {
+body[dark] x-tag x-side[cyan] {
   background-color: #56b6c2; }
 
 body[light] {
@@ -305,11 +457,61 @@ body[light] {
   body[light] a {
     color: #0184bc; }
 
+body[light] x-button,
+body[light] a[button],
+body[light] button {
+  background-color: transparent;
+  border: 1px solid #383a42;
+  color: #383a42; }
+  body[light] x-button:hover, body[light] x-button:active,
+  body[light] a[button]:hover,
+  body[light] a[button]:active,
+  body[light] button:hover,
+  body[light] button:active {
+    background-color: #383a42;
+    color: #fafafa; }
+  body[light] x-button[error],
+  body[light] a[button][error],
+  body[light] button[error] {
+    background-color: #e45649;
+    border: 1px solid #e45649;
+    color: #fafafa; }
+  body[light] x-button[success],
+  body[light] a[button][success],
+  body[light] button[success] {
+    background-color: #50a14f;
+    border: 1px solid #50a14f;
+    color: #fafafa; }
+
+body[light] input,
+body[light] textarea,
+body[light] select {
+  background-color: #fafafa;
+  border-color: #383a42;
+  color: #383a42; }
+  body[light] input:hover,
+  body[light] textarea:hover,
+  body[light] select:hover {
+    border-color: #0997b3; }
+  body[light] input:focus,
+  body[light] textarea:focus,
+  body[light] select:focus {
+    background-color: #fafafa;
+    border-color: #0184bc; }
+  body[light] input[error],
+  body[light] textarea[error],
+  body[light] select[error] {
+    border-color: #e45649; }
+  body[light] input[success],
+  body[light] textarea[success],
+  body[light] select[success] {
+    border-color: #50a14f; }
+
 body[light] x-nav, body[light] x-nav[primary] {
   background-color: #383a42; }
   body[light] x-nav x-nav-item, body[light] x-nav[primary] x-nav-item {
     background-color: #383a42; }
-    body[light] x-nav x-nav-item:hover, body[light] x-nav[primary] x-nav-item:hover {
+    body[light] x-nav x-nav-item[active], body[light] x-nav x-nav-item:hover, body[light] x-nav[primary] x-nav-item[active], body[light] x-nav[primary] x-nav-item:hover {
       background-color: #212226; }
     body[light] x-nav x-nav-item > *, body[light] x-nav[primary] x-nav-item > * {
       color: #fafafa; }
@@ -317,7 +519,7 @@ body[light] x-nav[secondary] {
   background-color: #e45649; }
   body[light] x-nav[secondary] x-nav-item {
     background-color: #e45649; }
-    body[light] x-nav[secondary] x-nav-item:hover {
+    body[light] x-nav[secondary] x-nav-item[active], body[light] x-nav[secondary] x-nav-item:hover {
       background-color: #da3020; }
     body[light] x-nav[secondary] x-nav-item > * {
       color: #fafafa; }
@@ -325,17 +527,17 @@ body[light] x-nav[secondary] {
 body[light] x-panel[outline] {
   border: 1px solid #383a42; }
 
-x-tag x-side[red] {
+body[light] x-tag x-side[red] {
   background-color: #e45649; }
-x-tag x-side[green] {
+body[light] x-tag x-side[green] {
   background-color: #50a14f; }
-x-tag x-side[yellow] {
+body[light] x-tag x-side[yellow] {
   background-color: #c18401; }
-x-tag x-side[blue] {
+body[light] x-tag x-side[blue] {
   background-color: #0184bc; }
-x-tag x-side[magenta] {
+body[light] x-tag x-side[magenta] {
   background-color: #a626a4; }
-x-tag x-side[cyan] {
+body[light] x-tag x-side[cyan] {
   background-color: #0997b3; }
 
 /*# sourceMappingURL=cerberus.css.map */
