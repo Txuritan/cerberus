@@ -4,18 +4,255 @@
 <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
 <meta content='width=device-width, initial-scale=1.0' name='viewport'>
 <title>Cerberus</title>
-<style>
-  @import url("./cerberus.css");
-</style>
+<link href='cerberus.css' media='all' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <x-nav primary>
+<x-grid flex>
+<x-column no-margin size='2'></x-column>
+<x-column flex no-margin nowrap='nowrap' size='8'>
 <x-nav-section grow>
 <x-nav-item brand>
-<a href='./'>Cerberus</a>
+<a href='#'>Cerberus</a>
+</x-nav-item>
+<x-nav-item>
+<a href='https://github.com/Txuritan/cerberus'>Download</a>
+</x-nav-item>
+</x-nav-section>
+<x-nav-section>
+<x-nav-item>
+<a href='#components'>Components</a>
+</x-nav-item>
+<x-nav-item>
+<a href='#scripts'>Scripts</a>
+</x-nav-item>
+</x-nav-section>
+</x-column>
+<x-column no-margin size='2'></x-column>
+</x-grid>
+</x-nav>
+<x-grid main>
+<x-column no-margin size='2'></x-column>
+<x-column size='8'>
+<x-panel>
+<x-panel-head>
+<h3 id='components'>Components</h3>
+</x-panel-head>
+<x-panel-body>
+<x-nav secondary>
+<x-nav-section grow>
+<x-nav-item>
+<a href='#buttons'>Buttons</a>
+</x-nav-item>
+<x-nav-item>
+<a href='#grid'>Grid</a>
+</x-nav-item>
+<x-nav-item>
+<a href='#inputs'>Inputs</a>
+</x-nav-item>
+<x-nav-item>
+<a href='#navbar'>Navbar</a>
+</x-nav-item>
+<x-nav-item>
+<a href='#panel'>Panel</a>
+</x-nav-item>
+<x-nav-item>
+<a href='#tags'>Tags</a>
 </x-nav-item>
 </x-nav-section>
 </x-nav>
+<x-panel>
+<x-panel-head>
+<h4 id='buttons'>Buttons</h4>
+</x-panel-head>
+<x-panel-body>
+<p>Buttons have three states: Default, Error, and Success.</p>
+<x-panel>
+<x-panel-body>
+<h5>Default Button</h5>
+<h6>Code</h6>
+<pre><code>&lt;x-button&gt;Button&lt;&#47;x-button&gt;&#x000A;&lt;a button&gt;Button&lt;&#47;a&gt;&#x000A;&lt;button&gt;Button&lt;&#47;button&gt;</code></pre>
+<h6>Output</h6>
+<x-button>Button</x-button>
+<a button>Button</a>
+<button>Button</button>
+</x-panel-body>
+</x-panel>
+<x-panel>
+<x-panel-body>
+<h5>Error Button</h5>
+<h6>Code</h6>
+<pre><code>&lt;x-button error&gt;Button&lt;&#47;x-button&gt;&#x000A;&lt;a button error&gt;Button&lt;&#47;a&gt;&#x000A;&lt;button error&gt;Button&lt;&#47;button&gt;</code></pre>
+<h6>Output</h6>
+<x-button error>Button</x-button>
+<a button error>Button</a>
+<button error>Button</button>
+</x-panel-body>
+</x-panel>
+<x-panel>
+<x-panel-body>
+<h5>Success Button</h5>
+<h6>Code</h6>
+<pre><code>&lt;x-button success&gt;Button&lt;&#47;x-button&gt;&#x000A;&lt;a button success&gt;Button&lt;&#47;a&gt;&#x000A;&lt;button success&gt;Button&lt;&#47;button&gt;</code></pre>
+<h6>Output</h6>
+<x-button success>Button</x-button>
+<a button success>Button</a>
+<button success>Button</button>
+</x-panel-body>
+</x-panel>
+</x-panel-body>
+</x-panel>
+<x-panel>
+<x-panel-head>
+<h4 id='grid'>Grid</h4>
+</x-panel-head>
+<x-panel-body>
+<p>Grids use two tags, x-grid and x-column. x-grid is the parent tag and is used as a container. x-column is a container and is used to control the size of its children.</p>
+<x-panel>
+<x-panel-body>
+<h6>Code</h6>
+<pre><code>&lt;x-grid&gt;&#x000A;  &lt;x-column size="3"&gt;&lt;&#47;x-column&gt;&#x000A;  &lt;x-column size="6"&gt;&#x000A;    &lt;!-- This docs contents go here --&gt;&#x000A;  &lt;&#47;x-column&gt;&#x000A;  &lt;x-column size="3"&gt;&lt;&#47;x-column&gt;&#x000A;&lt;&#47;x-grid&gt;</code></pre>
+<h6>Output</h6>
+<p>See this page's source.</p>
+</x-panel-body>
+</x-panel>
+</x-panel-body>
+</x-panel>
+<x-panel>
+<x-panel-head>
+<h4 id='inputs'>Inputs</h4>
+</x-panel-head>
+<x-panel-body>
+<p>Inputs, like buttons, have three states: Default, Error, and Success.</p>
+<x-panel>
+<x-panel-body>
+<h5>Default Input</h5>
+<h6>Code</h6>
+<pre><code>&lt;input&gt;&lt;&#47;input&gt;&#x000A;&lt;textarea&gt;&lt;&#47;textarea&gt;&#x000A;&lt;select&gt;&lt;&#47;select&gt;</code></pre>
+<h6>Output</h6>
+<input>
+<textarea></textarea>
+<select></select>
+</x-panel-body>
+</x-panel>
+<x-panel>
+<x-panel-body>
+<h5>Error Input</h5>
+<h6>Code</h6>
+<pre><code>&lt;input error&gt;&lt;&#47;input&gt;&#x000A;&lt;textarea error&gt;&lt;&#47;textarea&gt;&#x000A;&lt;select error&gt;&lt;&#47;select&gt;</code></pre>
+<h6>Output</h6>
+<input error>
+<textarea error></textarea>
+<select error></select>
+</x-panel-body>
+</x-panel>
+<x-panel>
+<x-panel-body>
+<h5>Success Input</h5>
+<h6>Code</h6>
+<pre><code>&lt;input success&gt;&lt;&#47;input&gt;&#x000A;&lt;textarea success&gt;&lt;&#47;textarea&gt;&#x000A;&lt;select success&gt;&lt;&#47;select&gt;</code></pre>
+<h6>Output</h6>
+<input success>
+<textarea success></textarea>
+<select success></select>
+</x-panel-body>
+</x-panel>
+</x-panel-body>
+</x-panel>
+<x-panel>
+<x-panel-head>
+<h4 id='navbar'>Navbar</h4>
+</x-panel-head>
+<x-panel-body>
+<p>Navbars have two states: Primary and Secondary. Neither do anything to change abilities and only change looks.</p>
+<p>Also note that Grids can be used inside Navbars, this page is a great example of that.</p>
+<x-panel>
+<x-panel-body>
+<h5>Primary Navbar</h5>
+<h6>Code</h6>
+<pre><code>&lt;x-nav primary&gt;&#x000A;  &lt;x-nav-section grow&gt;&#x000A;    &lt;x-nav-item brand&gt;&#x000A;      &lt;a href=&quot;#&quot;&gt; Cerberus&lt;/a&gt;&#x000A;    &lt;/x-nav-item&gt;&#x000A;  &lt;/x-nav-section&gt;&#x000A;  &lt;x-nav-section&gt;&#x000A;    &lt;x-nav-item&gt;&#x000A;      &lt;a href=&quot;#navbar&quot;&gt; Navbar&lt;/a&gt;&#x000A;    &lt;/x-nav-item&gt;&#x000A;  &lt;/x-nav-section&gt;&#x000A;&lt;/x-nav&gt;</code></pre>
+<h6>Output</h6>
+<x-nav primary>
+<x-nav-section grow>
+<x-nav-item brand>
+<a href='#'>Cerberus</a>
+</x-nav-item>
+</x-nav-section>
+<x-nav-section>
+<x-nav-item>
+<a href='#navbar'>Navbar</a>
+</x-nav-item>
+</x-nav-section>
+</x-nav>
+</x-panel-body>
+</x-panel>
+<x-panel>
+<x-panel-body>
+<h5>Secondary Navbar</h5>
+<h6>Code</h6>
+<pre><code>&lt;x-nav secondary&gt;&#x000A;  &lt;x-nav-section grow&gt;&#x000A;    &lt;x-nav-item brand&gt;&#x000A;      &lt;a href=&quot;#&quot;&gt; Cerberus&lt;/a&gt;&#x000A;    &lt;/x-nav-item&gt;&#x000A;  &lt;/x-nav-section&gt;&#x000A;  &lt;x-nav-section&gt;&#x000A;    &lt;x-nav-item&gt;&#x000A;      &lt;a href=&quot;#navbar&quot;&gt; Navbar&lt;/a&gt;&#x000A;    &lt;/x-nav-item&gt;&#x000A;  &lt;/x-nav-section&gt;&#x000A;&lt;/x-nav&gt;</code></pre>
+<h6>Output</h6>
+<x-nav secondary>
+<x-nav-section grow>
+<x-nav-item brand>
+<a href='#'>Cerberus</a>
+</x-nav-item>
+</x-nav-section>
+<x-nav-section>
+<x-nav-item>
+<a href='#navbar'>Navbar</a>
+</x-nav-item>
+</x-nav-section>
+</x-nav>
+</x-panel-body>
+</x-panel>
+</x-panel-body>
+</x-panel>
+<x-panel>
+<x-panel-head>
+<h4 id='panel'>Panel</h4>
+</x-panel-head>
+<x-panel-body>
+<p>Panels has two states Default and Bordered.</p>
+<x-panel>
+<x-panel-body>
+<h5>Default Panel</h5>
+<h6>Code</h6>
+<h6>Output</h6>
+</x-panel-body>
+</x-panel>
+<x-panel>
+<x-panel-body>
+<h5>Bordered Panel</h5>
+<h6>Code</h6>
+<h6>Output</h6>
+</x-panel-body>
+</x-panel>
+</x-panel-body>
+</x-panel>
+<x-panel>
+<x-panel-head>
+<h4 id='tags'>Tags</h4>
+</x-panel-head>
+<x-panel-body></x-panel-body>
+</x-panel>
+</x-panel-body>
+</x-panel>
+<x-panel>
+<x-panel-head>
+<h3 id='scripts'>Scripts</h3>
+</x-panel-head>
+<x-panel-body>
+<x-panel>
+<x-panel-head></x-panel-head>
+<x-panel-body></x-panel-body>
+<x-panel-foot></x-panel-foot>
+</x-panel>
+</x-panel-body>
+</x-panel>
+</x-column>
+<x-column no-margin size='2'></x-column>
+</x-grid>
 <script>
   var time = new Date().getHours();
   if ((time >= 20 && time <= 23) || (time >= 0 && time <= 4)) {

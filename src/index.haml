@@ -4,14 +4,247 @@
     %meta{"http-equiv" => "Content-Type", :content => "text/html; charset=utf-8"}
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     %title Cerberus
-    -# %link{:href => "cerberus.css", :rel => "stylesheet", :type => "type/css", :media => "all"}
-    :css
-      @import url("./cerberus.css");
+    %link{:href => "cerberus.css", :rel => "stylesheet", :type => "text/css", :media => "all"}
   %body
     %x-nav{:primary => true}
-      %x-nav-section{:grow => true}
-        %x-nav-item{:brand => true}
-          %a{:href => "./"} Cerberus
+      %x-grid{:flex => true}
+        %x-column{"no-margin" => true, :size => "2"}
+        %x-column{:flex => true, "no-margin" => true, :nowrap => "nowrap", :size => "8"}
+          %x-nav-section{:grow => true}
+            %x-nav-item{:brand => true}
+              %a{:href => "#"} Cerberus
+            %x-nav-item
+              %a{:href => "https://github.com/Txuritan/cerberus"} Download
+          %x-nav-section
+            %x-nav-item
+              %a{:href => "#components"} Components
+            %x-nav-item
+              %a{:href => "#scripts"} Scripts
+        %x-column{"no-margin" => true, :size => "2"}
+    %x-grid{:main => true}
+      %x-column{"no-margin" => true, :size => "2"}
+      %x-column{:size => "8"}
+        %x-panel
+          %x-panel-head
+            %h3#components Components
+          %x-panel-body
+            %x-nav{:secondary => true}
+              %x-nav-section{:grow => true}
+                %x-nav-item
+                  %a{:href => "#buttons"} Buttons
+                %x-nav-item
+                  %a{:href => "#grid"} Grid
+                %x-nav-item
+                  %a{:href => "#inputs"} Inputs
+                %x-nav-item
+                  %a{:href => "#navbar"} Navbar
+                %x-nav-item
+                  %a{:href => "#panel"} Panel
+                %x-nav-item
+                  %a{:href => "#tags"} Tags
+            %x-panel
+              %x-panel-head
+                %h4#buttons Buttons
+              %x-panel-body
+                %p Buttons have three states: Default, Error, and Success.
+                %x-panel
+                  %x-panel-body
+                    %h5 Default Button
+                    %h6 Code
+                    %pre
+                      %code
+                        :preserve
+                          &lt;x-button&gt;Button&lt;&#47;x-button&gt;
+                          &lt;a button&gt;Button&lt;&#47;a&gt;
+                          &lt;button&gt;Button&lt;&#47;button&gt;
+                    %h6 Output
+                    %x-button Button
+                    %a{:button => true} Button
+                    %button Button
+                %x-panel
+                  %x-panel-body
+                    %h5 Error Button
+                    %h6 Code
+                    %pre
+                      %code
+                        :preserve
+                          &lt;x-button error&gt;Button&lt;&#47;x-button&gt;
+                          &lt;a button error&gt;Button&lt;&#47;a&gt;
+                          &lt;button error&gt;Button&lt;&#47;button&gt;
+                    %h6 Output
+                    %x-button{:error => true} Button
+                    %a{:button => true, :error => true} Button
+                    %button{:error => true} Button
+                %x-panel
+                  %x-panel-body
+                    %h5 Success Button
+                    %h6 Code
+                    %pre
+                      %code
+                        :preserve
+                          &lt;x-button success&gt;Button&lt;&#47;x-button&gt;
+                          &lt;a button success&gt;Button&lt;&#47;a&gt;
+                          &lt;button success&gt;Button&lt;&#47;button&gt;
+                    %h6 Output
+                    %x-button{:success => true} Button
+                    %a{:button => true, :success => true} Button
+                    %button{:success => true} Button
+            %x-panel
+              %x-panel-head
+                %h4#grid Grid
+              %x-panel-body
+                %p Grids use two tags, x-grid and x-column. x-grid is the parent tag and is used as a container. x-column is a container and is used to control the size of its children.
+                %x-panel
+                  %x-panel-body
+                    %h6 Code
+                    %pre
+                      %code
+                        :preserve
+                          &lt;x-grid&gt;
+                            &lt;x-column size="3"&gt;&lt;&#47;x-column&gt;
+                            &lt;x-column size="6"&gt;
+                              &lt;!-- This docs contents go here --&gt;
+                            &lt;&#47;x-column&gt;
+                            &lt;x-column size="3"&gt;&lt;&#47;x-column&gt;
+                          &lt;&#47;x-grid&gt;
+                    %h6 Output
+                    %p See this page's source.
+            %x-panel
+              %x-panel-head
+                %h4#inputs Inputs
+              %x-panel-body
+                %p Inputs, like buttons, have three states: Default, Error, and Success.
+                %x-panel
+                  %x-panel-body
+                    %h5 Default Input
+                    %h6 Code
+                    %pre
+                      %code
+                        :preserve
+                          &lt;input&gt;&lt;&#47;input&gt;
+                          &lt;textarea&gt;&lt;&#47;textarea&gt;
+                          &lt;select&gt;&lt;&#47;select&gt;
+                    %h6 Output
+                    %input
+                    %textarea
+                    %select
+                %x-panel
+                  %x-panel-body
+                    %h5 Error Input
+                    %h6 Code
+                    %pre
+                      %code
+                        :preserve
+                          &lt;input error&gt;&lt;&#47;input&gt;
+                          &lt;textarea error&gt;&lt;&#47;textarea&gt;
+                          &lt;select error&gt;&lt;&#47;select&gt;
+                    %h6 Output
+                    %input{:error => true}
+                    %textarea{:error => true}
+                    %select{:error => true}
+                %x-panel
+                  %x-panel-body
+                    %h5 Success Input
+                    %h6 Code
+                    %pre
+                      %code
+                        :preserve
+                          &lt;input success&gt;&lt;&#47;input&gt;
+                          &lt;textarea success&gt;&lt;&#47;textarea&gt;
+                          &lt;select success&gt;&lt;&#47;select&gt;
+                    %h6 Output
+                    %input{:success => true}
+                    %textarea{:success => true}
+                    %select{:success => true}
+            %x-panel
+              %x-panel-head
+                %h4#navbar Navbar
+              %x-panel-body
+                %p Navbars have two states: Primary and Secondary. Neither do anything to change abilities and only change looks.
+                %p Also note that Grids can be used inside Navbars, this page is a great example of that.
+                %x-panel
+                  %x-panel-body
+                    %h5 Primary Navbar
+                    %h6 Code
+                    %pre
+                      %code
+                        :preserve
+                          &lt;x-nav primary&gt;
+                            &lt;x-nav-section grow&gt;
+                              &lt;x-nav-item brand&gt;
+                                &lt;a href=&quot;#&quot;&gt; Cerberus&lt;/a&gt;
+                              &lt;/x-nav-item&gt;
+                            &lt;/x-nav-section&gt;
+                            &lt;x-nav-section&gt;
+                              &lt;x-nav-item&gt;
+                                &lt;a href=&quot;#navbar&quot;&gt; Navbar&lt;/a&gt;
+                              &lt;/x-nav-item&gt;
+                            &lt;/x-nav-section&gt;
+                          &lt;/x-nav&gt;
+                    %h6 Output
+                    %x-nav{:primary => true}
+                      %x-nav-section{:grow => true}
+                        %x-nav-item{:brand => true}
+                          %a{:href => "#"} Cerberus
+                      %x-nav-section
+                        %x-nav-item
+                          %a{:href => "#navbar"} Navbar
+                %x-panel
+                  %x-panel-body
+                    %h5 Secondary Navbar
+                    %h6 Code
+                    %pre
+                      %code
+                        :preserve
+                          &lt;x-nav secondary&gt;
+                            &lt;x-nav-section grow&gt;
+                              &lt;x-nav-item brand&gt;
+                                &lt;a href=&quot;#&quot;&gt; Cerberus&lt;/a&gt;
+                              &lt;/x-nav-item&gt;
+                            &lt;/x-nav-section&gt;
+                            &lt;x-nav-section&gt;
+                              &lt;x-nav-item&gt;
+                                &lt;a href=&quot;#navbar&quot;&gt; Navbar&lt;/a&gt;
+                              &lt;/x-nav-item&gt;
+                            &lt;/x-nav-section&gt;
+                          &lt;/x-nav&gt;
+                    %h6 Output
+                    %x-nav{:secondary => true}
+                      %x-nav-section{:grow => true}
+                        %x-nav-item{:brand => true}
+                          %a{:href => "#"} Cerberus
+                      %x-nav-section
+                        %x-nav-item
+                          %a{:href => "#navbar"} Navbar
+            %x-panel
+              %x-panel-head
+                %h4#panel Panel
+              %x-panel-body
+                %p Panels has two states Default and Bordered.
+                %x-panel
+                  %x-panel-body
+                    %h5 Default Panel
+                    %h6 Code
+                    %h6 Output
+                %x-panel
+                  %x-panel-body
+                    %h5 Bordered Panel
+                    %h6 Code
+                    %h6 Output
+            %x-panel
+              %x-panel-head
+                %h4#tags Tags
+              %x-panel-body
+        %x-panel
+          %x-panel-head
+            %h3#scripts Scripts
+          %x-panel-body
+            %x-panel
+              %x-panel-head
+              %x-panel-body
+              %x-panel-foot
+      %x-column{"no-margin" => true, :size => "2"}
+
     :javascript
       var time = new Date().getHours();
       if ((time >= 20 && time <= 23) || (time >= 0 && time <= 4)) {

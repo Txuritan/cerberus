@@ -19,5 +19,5 @@ task :compile do |t, args|
 end
 
 task :serve do |t, args|
-	system "ruby -run -e httpd . -p 5000"
+	system "ruby -run -e httpd ./docs/ -p 5000"
 end
